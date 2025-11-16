@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@drawable/bluecrowd"
+    tools:context=".ProfileActivity">
+
+    <!-- Circular profile image with gradient ring -->
+    <FrameLayout
+        android:id="@+id/profileImageContainer"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/newlogobsp"
+            app:shapeAppearanceOverlay="@style/roundedImageRounded"
+            tools:srcCompat="@drawable/newlogobsp" />
+    </FrameLayout>
+
+    <!-- Hint text under image -->
+    <TextView
+        android:id="@+id/textChangePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tap_image_to_change_photo"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/profileImageContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Username -->
+    <EditText
+        android:id="@+id/editProfileUsername"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/username"
+        android:background="@drawable/btn_background"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/glacier"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/textChangePhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editProfileEmail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/email"
+        android:background="@drawable/btn_background"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textColor="@color/glacier"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/editProfileUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Phone -->
+    <EditText
+        android:id="@+id/editProfilePhone"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/phone_number"
+        android:background="@drawable/btn_background"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:textColor="@color/glacier"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/editProfileEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Role label -->
+    <TextView
+        android:id="@+id/textRoleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/role"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/editProfilePhone"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Role dropdown -->
+    <Spinner
+        android:id="@+id/spinnerRole"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textRoleLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Save button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSaveProfile"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/save_profile"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_background"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/spinnerRole"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
